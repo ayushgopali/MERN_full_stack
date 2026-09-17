@@ -429,6 +429,48 @@ main form button:active {
     white-space: nowrap;
 }
 
+.task-card .status-pending {
+    background: var(--gold);
+    border-color: #f0c15a;
+    color: var(--gold-text);
+}
+
+.task-card .status-completed {
+    background: var(--mint);
+    border-color: #bfe6d4;
+    color: var(--mint-text);
+}
+
+.task-card.status-pending {
+    border-left-color: var(--gold);
+}
+
+.task-card.status-pending:hover {
+    border-left-color: var(--gold);
+}
+
+.task-card.status-completed {
+    border-left-color: var(--mint-text);
+}
+
+.task-card.status-completed:hover {
+    border-left-color: var(--mint-text);
+}
+
+nav + div > div .status-pending,
+nav + div > h2 + p + p + p.status-pending {
+    background: var(--gold);
+    border-color: #f0c15a;
+    color: var(--gold-text);
+}
+
+nav + div > div .status-completed,
+nav + div > h2 + p + p + p.status-completed {
+    background: var(--mint);
+    border-color: #bfe6d4;
+    color: var(--mint-text);
+}
+
 .task-card button {
     align-items: center;
     border: 0;
@@ -646,7 +688,7 @@ nav + div > h2 + p {
 }
 
 /* Status in Task Details */
-nav + div > h2 + p + p {
+nav + div > h2 + p + p + p {
     align-items: center;
     background: var(--blue-soft);
     border: 1px solid #dce8ff;
@@ -661,13 +703,30 @@ nav + div > h2 + p + p {
     padding: 7px 18px;
 }
 
-nav + div > h2 + p + p::before {
+nav + div > h2 + p + p + p::before {
     background: var(--blue);
     border-radius: 50%;
     content: "";
     display: inline-block;
     height: 7px;
     width: 7px;
+}
+
+.task-id {
+    color: var(--muted);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: -16px 0 18px;
+    word-break: break-all;
+}
+
+nav + div > h2 + p + p + p.status-pending::before {
+    background: var(--gold-text);
+}
+
+nav + div > h2 + p + p + p.status-completed::before {
+    background: var(--mint-text);
 }
 
 /* Task Not Found State */

@@ -7,7 +7,6 @@ function AddTask(props){
     async function handleSubmit(e){
         e.preventDefault();
         const newTask = {
-            id:Date.now(),
             title: title,
             description: description,
             status: "Pending"

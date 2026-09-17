@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 function TaskDetails(props){
    const { id } = useParams();
    const [task, setTask] = useState(() =>
-     props.tasks.find((t) => t.id === Number(id)) || null
+     props.tasks.find((t) => t._id === id) || null
    );
   const [loading, setLoading] = useState(true);
 
@@ -40,7 +40,8 @@ function TaskDetails(props){
             <h1>Task Details</h1>
             <h2>{task.title}</h2>
             <p>{task.description}</p>
-            <p>Status: {task.status}</p>
+            <p className="task-id">Task ID: {task._id}</p>
+            <p className={`status-badge ${task.status === "Completed" ? "status-completed" : "status-pending"}`}>{task.status}</p>
         </div>
     );
 }

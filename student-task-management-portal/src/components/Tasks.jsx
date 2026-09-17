@@ -5,10 +5,10 @@ function Tasks(props){
             
             {
                 props.tasks.map((task)=>(
-                    <div key={task.id}>
+                    <div key={task._id}>
                         <h3>{task.title}</h3>
                         <p>{task.description}</p>
-                        <p>Status: {task.status}</p>
+                        <p className={`status-badge ${task.status === "Completed" ? "status-completed" : "status-pending"}`}>{task.status}</p>
                     </div>
                 ))
             }
