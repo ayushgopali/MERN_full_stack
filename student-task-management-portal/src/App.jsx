@@ -6,6 +6,9 @@ import Dashboard from "./components/Dashboard";
 import {Routes, Route} from "react-router-dom"
 import Tasks from "./components/Tasks";
 import TaskDetails from "./components/TaskDetails";
+import Register from "./components/Register";
+import Login from "./components/Login";
+
 import { useState, useEffect } from "react";
 function App(){
 
@@ -27,6 +30,8 @@ function App(){
         <Route path="/tasks" element={<Tasks tasks={tasks} />} />
         <Route path="/tasks/:id" 
                element={<TaskDetails tasks={tasks} />} />
+        <Route path ="/Login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>} />
       </Routes>
     </div>
   );
